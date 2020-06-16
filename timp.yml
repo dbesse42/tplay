@@ -1,4 +1,4 @@
-- hosts: dev
+- hosts: localhost
   connection: local
   gather_facts: no
   tasks:
@@ -6,5 +6,10 @@
     add_host:
       name: '192.168.77.78'
       groups: dev
+      
+- hosts: dev
+  connection: local
+  gather_facts: no
+  tasks:
   - name: test debug statement
     debug: msg="hi universe from rack {{rack}}"
