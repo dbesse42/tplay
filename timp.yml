@@ -2,5 +2,9 @@
   connection: local
   gather_facts: no
   tasks:
+  - name: add a host dynamically
+    add_host:
+      name: '192.168.77.78'
+      groups: dev
   - name: test debug statement
     debug: msg="hi universe from rack {{rack}}"
