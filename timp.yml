@@ -1,19 +1,6 @@
-- hosts: localhost
-  connection: local
-  gather_facts: no
-  tasks:
-  - name: add a host dynamically
-    add_host:
-      name: '192.168.77.78'
-      groups: dev
-      
-- hosts: 192.168.77.78
+- hosts: dev
   connection: local
   gather_facts: no
   tasks:
   - name: test debug statement
-    debug: msg="hi universe from rack {{rack}}"
-  - name: create file
-    copy:
-      content: "asdfasdf"
-      dest: /etc/test
+    debug: msg="hi universe from {{rest_ip}}"
