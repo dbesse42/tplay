@@ -3,4 +3,4 @@
   gather_facts: no
   tasks:
   - name: test debug statement
-    debug: msg="hi universe"
+    debug: msg="hi universe from rack {{rack}}"
